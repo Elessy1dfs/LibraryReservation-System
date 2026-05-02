@@ -2,7 +2,7 @@
 session_start();
 include 'connect.php';
 
-require_once 'includes/header.php'; 
+
 
 if(isset($_POST['btnLogin'])){
     $username = mysqli_real_escape_string($conn, $_POST['txtusername']);
@@ -21,9 +21,16 @@ if(isset($_POST['btnLogin'])){
             } else {
                 header("Location: reserve_facility.php");
             }
-            exit();
+            exit(); 
+        } else {
+            $error = "Incorrect Password";
         }
+    } else {
+        $error = "User not found";
+    }
+}
 ?>
+
 <div class="container mt-5">
     <?php if(isset($error)) echo "<script>alert('$error');</script>"; ?>
     
