@@ -2,6 +2,11 @@
 # library-reservation-system
 a system for both students and library admins so reservations are easier to manage.
 
+Technology Stack
+JavaScript Manages client-side validation, AJAX for real-time room availability, and UI alerts.
+CSS Custom styling using the for the Admin and Student dashboards.
+PHP Manages client-side validation, AJAX for real-time room availability, and UI alerts.
+
 Student View
 Students can either:
 Register as a new student
@@ -27,12 +32,15 @@ Admin History Logimg below
 ## System Diagrams
 
 ### Use Case Diagram
-This diagram shows how users interact with the system.
-<img src="assets/images/UsecaseDiagram.png" width="300" alt="Use Case Diagram">
+<img src="assets/images/UsecaseDiagram.png" width="200" alt="Use Case Diagram">
 
 ### Class Diagram
-This diagram shows the system's structure and the relationships between objects.
-<img src="assets/images/Classdiagram.png" width="300" alt="System Class Diagram">
+<img src="assets/images/Classdiagram.png" width="200" alt="System Class Diagram">
+
+Technology Stack
+JavaScript Manages client-side validation, AJAX for real-time room availability, and UI alerts.
+CSS Custom styling using the CIT-U Maroon and Gold theme for the Admin and Student dashboards.
+PHP Manages client-side validation, AJAX for real-time room availability, and UI alerts.
     
 
 
