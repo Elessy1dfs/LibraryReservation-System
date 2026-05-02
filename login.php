@@ -3,8 +3,14 @@ session_start();
 include 'connect.php';
 
 require_once 'includes/header.php'; 
-?>
 
+if(isset($_POST['btnLogin'])){
+    $username = mysqli_real_escape_string($conn, $_POST['txtusername']);
+    $password = $_POST['txtpassword'];
+
+    $sql = "SELECT * FROM tbluseraccount WHERE username='$username'";
+    $result = mysqli_query($conn, $sql);
+?>
 <div class="container mt-5">
     <?php if(isset($error)) echo "<script>alert('$error');</script>"; ?>
     
