@@ -75,3 +75,29 @@ require_once 'includes/footer.php';
         </div>
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('#res_date').change(function(){
+        $('#time_slot').prop('disabled', false);
+    });
+
+    $('#time_slot').change(function(){
+        var date = $('#res_date').val();
+        var time = $(this).val();
+
+        if(date && time){
+            $.ajax({
+                url: "fetch_available_rooms.php",
+                method: "POST",
+                data: {date: date, time: time},
+                success: function(data){
+                    $('#facility_id').html(data).prop('disabled', false);
+                    $('#submitBtn').prop('disabled', false);
+                }
+            });
+        }
+    });
+});
+</script>
