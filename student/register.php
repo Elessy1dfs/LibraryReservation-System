@@ -69,3 +69,11 @@
         
         // SECURE PASSWORD HASHING
         $password  = password_hash($_POST['txtpassword'], PASSWORD_DEFAULT);
+
+        // 1. Insert into Student Info Table
+        $sql1 = "INSERT INTO tblstudent(student_id, firstname, lastname, program, yearlevel) 
+                 VALUES ('$sid', '$fname', '$lname', '$program', '$yearlevel')";
+        
+        // 2. Insert into User Accounts Table (for Login)
+        $sql2 = "INSERT INTO tbluseraccount(username, password, role) 
+                 VALUES ('$sid', '$password', 'student')";
