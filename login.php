@@ -10,6 +10,19 @@ if(isset($_POST['btnLogin'])){
 
     $sql = "SELECT * FROM tbluseraccount WHERE username='$username'";
     $result = mysqli_query($conn, $sql);
+
+    if($row = mysqli_fetch_array($result)){
+        if($password == $row['password'] || password_verify($password, $row['password'])){
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['role'] = $row['role'];
+
+            if($row['role'] == 'admin'){
+                header("Location: admin_requests.php");
+            } else {
+                header("Location: reserve_facility.php");
+            }
+            exit();
+        }
 ?>
 <div class="container mt-5">
     <?php if(isset($error)) echo "<script>alert('$error');</script>"; ?>
