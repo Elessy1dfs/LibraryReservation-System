@@ -4,7 +4,7 @@ a system for both students and library admins so reservations are easier to mana
 
 Technology Stack
 JavaScript Manages client-side validation, AJAX for real-time room availability, and UI alerts.
-CSS Custom styling using the CIT-U Maroon and Gold theme for the Admin and Student dashboards.
+CSS Custom styling using the for the Admin and Student dashboards.
 PHP Manages client-side validation, AJAX for real-time room availability, and UI alerts.
 
 Student View
