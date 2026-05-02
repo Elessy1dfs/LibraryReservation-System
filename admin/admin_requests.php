@@ -26,7 +26,12 @@ if(isset($_GET['action']) && isset($_GET['id'])){
             </tr>
         </thead>
         <tbody>
-          
+          <?php
+$sql = "SELECT r.*, f.facility_name FROM tblreservations r 
+        JOIN tblfacilities f ON r.facility_id = f.facility_id 
+        WHERE r.status = 'Pending'";
+$res = mysqli_query($conn, $sql);
+?>
         </tbody>
     </table>
 </div>
