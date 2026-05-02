@@ -27,10 +27,24 @@ if(isset($_GET['action']) && isset($_GET['id'])){
         </thead>
         <tbody>
           <?php
-$sql = "SELECT r.*, f.facility_name FROM tblreservations r 
+    $sql = "SELECT r.*, f.facility_name FROM tblreservations r 
         JOIN tblfacilities f ON r.facility_id = f.facility_id 
         WHERE r.status = 'Pending'";
-$res = mysqli_query($conn, $sql);
+    $res = mysqli_query($conn, $sql);
+if(mysqli_num_rows($res) > 0){
+    while($row = mysqli_fetch_array($res)){
+        echo "<tr>
+                <td>{$row['student_id']}</td>
+                <td>{$row['facility_name']}</td>
+                <td>{$row['reservation_date']}</td>
+                <td>{$row['time_slot']}</td>
+                <td>
+                    <!-- Action buttons to follow -->
+                </td>
+              </tr>";
+    }
+}
+
 ?>
         </tbody>
     </table>
