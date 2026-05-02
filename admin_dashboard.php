@@ -2,6 +2,18 @@
 include 'connect.php';
 require_once 'includes/header.php';
 
+// Add Book Logic
+if(isset($_POST['btnAddBook'])){
+    $title = mysqli_real_escape_string($conn, $_POST['txttitle']);
+    $desc = mysqli_real_escape_string($conn, $_POST['txtdesc']);
+    $date = $_POST['txtdate'];
+
+    $sql = "INSERT INTO tblbooks (title, description, date_added) VALUES ('$title', '$desc', '$date')";
+    mysqli_query($conn, $sql);
+}
+
+
+?>
 
 <div class="container-fluid p-4">
     <div class="row">
