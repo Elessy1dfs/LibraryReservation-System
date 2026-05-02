@@ -1,13 +1,8 @@
 
 # library-reservation-system
-Incase there will be a problem in our working project this is my back up \.
-
-So this is a system ive been working on in one of my subject so its basically a system for both students and library admins so reservations are easier to manage and won’t overlap.
-
-
+a system for both students and library admins so reservations are easier to manage.
 
 Student View
-
 Students can either:
 Register as a new student
 Log in using their Student ID (as username) and password
@@ -15,20 +10,20 @@ After logging in, the reservation process is step-by-step:
 1.First, select a date
 2.Then choose a time
 3.Lastly, pick a room/place
-I did it this way so two users won’t end up booking the same schedule.
-
-(image to be followed)
+we did it this way so two users won’t end up booking the same schedule.
+Student Pending View
+![Student Pending Requests](assets/images/studentviewpending.png)
 
 Admin view
 Admins can log in and access the dashboard.
 From there they can:
-See all reservation requests
-Either accept or ignore them
+Admin Pending Requests
+![Admin Pending Requests](assets/images/viewrequestad.png)
 They can also:
 Check reservation history
 See who last used a room (in case there are damages or issues)
-
-(image to be followed)
+Admin History Logimg below
+![Admin History Log](assets/images/viewhistoryad.png)
 ## System Diagrams
 
 ### Use Case Diagram
