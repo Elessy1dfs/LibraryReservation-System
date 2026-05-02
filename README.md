@@ -33,11 +33,11 @@ See who last used a room (in case there are damages or issues)
 
 ### Use Case Diagram
 This diagram shows how users interact with the system.
-<img src="assets/UsecaseDiagram.png" width="300" alt="Use Case Diagram">
+<img src="assets/images/UsecaseDiagram.png" width="300" alt="Use Case Diagram">
 
 ### Class Diagram
 This diagram shows the system's structure and the relationships between objects.
-<img src="assets/Classdiagram.png" width="300" alt="System Class Diagram">
+<img src="assets/images/Classdiagram.png" width="300" alt="System Class Diagram">
     
 
 
