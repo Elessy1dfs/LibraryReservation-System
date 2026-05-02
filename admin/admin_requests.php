@@ -43,8 +43,11 @@ if(mysqli_num_rows($res) > 0){
 <a href='?action=reject&id={$row['res_id']}' class='btn btn-danger btn-sm'>Decline</a>
                 </td>
               </tr>";
-    }
+              } else {
+    echo "<tr><td colspan='5' class='text-center'>No pending reservations.</td></tr>";
 }
+    }
+
 
 ?>
         </tbody>
