@@ -12,7 +12,12 @@ if(isset($_POST['btnAddBook'])){
     mysqli_query($conn, $sql);
 }
 
-
+// Delete Book Logic
+if(isset($_GET['delete'])){
+    $id = $_GET['delete'];
+    mysqli_query($conn, "DELETE FROM tblbooks WHERE id=$id");
+    header("Location: admin_dashboard.php");
+}
 ?>
 
 <div class="container-fluid p-4">
