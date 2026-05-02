@@ -18,7 +18,13 @@ if(isset($_POST['facility_id'])){
     if(mysqli_num_rows($check) > 0){
         echo "<script>alert('Error: This slot was just taken! Please choose another.'); window.location.href='reserve_facility.php';</script>";
     } else {
-       
+       $sql = "INSERT INTO tblreservations (student_id, facility_id, reservation_date, time_slot, status) 
+                VALUES ('$student_id', '$facility_id', '$res_date', '$time_slot', 'Pending')";
+        
+        if(mysqli_query($conn, $sql)){
+            echo "<script>alert('Reservation Sent!'); window.location.href='my_reservations.php';</script>";
+            exit();
+        }
     }
 }
 
