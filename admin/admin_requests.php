@@ -10,6 +10,7 @@ if(isset($_GET['action']) && isset($_GET['id'])){
     
     mysqli_query($conn, "UPDATE tblreservations SET status='$new_status' WHERE res_id=$id");
     header("Location: admin_requests.php");
+    exit();
 }
 ?>
 
@@ -26,30 +27,31 @@ if(isset($_GET['action']) && isset($_GET['id'])){
             </tr>
         </thead>
         <tbody>
-          <?php
-    $sql = "SELECT r.*, f.facility_name FROM tblreservations r 
-        JOIN tblfacilities f ON r.facility_id = f.facility_id 
-        WHERE r.status = 'Pending'";
-    $res = mysqli_query($conn, $sql);
-if(mysqli_num_rows($res) > 0){
-    while($row = mysqli_fetch_array($res)){
-        echo "<tr>
-                <td>{$row['student_id']}</td>
-                <td>{$row['facility_name']}</td>
-                <td>{$row['reservation_date']}</td>
-                <td>{$row['time_slot']}</td>
-                <td>
-                   <a href='?action=approve&id={$row['res_id']}' class='btn btn-success btn-sm'>Accept</a>
-<a href='?action=reject&id={$row['res_id']}' class='btn btn-danger btn-sm'>Decline</a>
-                </td>
-              </tr>";
-              } else {
-    echo "<tr><td colspan='5' class='text-center'>No pending reservations.</td></tr>";
-}
-    }
-
-
-?>
+            <?php
+            $sql = "SELECT r.*, f.facility_name FROM tblreservations r 
+                    JOIN tblfacilities f ON r.facility_id = f.facility_id 
+                    WHERE r.status = 'Pending'";
+            $res = mysqli_query($conn, $sql);
+            
+            if(mysqli_num_rows($res) > 0){
+                while($row = mysqli_fetch_array($res)){
+                    echo "<tr>
+                            <td>{$row['student_id']}</td>
+                            <td>{$row['facility_name']}</td>
+                            <td>{$row['reservation_date']}</td>
+                            <td>{$row['time_slot']}</td>
+                            <td>
+                                <a href='?action=approve&id={$row['res_id']}' class='btn btn-success btn-sm'>Accept</a>
+                                <a href='?action=reject&id={$row['res_id']}' class='btn btn-danger btn-sm'>Decline</a>
+                            </td>
+                          </tr>";
+                }
+            } else {
+                echo "<tr><td colspan='5' class='text-center'>No pending reservations.</td></tr>";
+            }
+            ?>
         </tbody>
     </table>
 </div>
+
+<?php require_once 'includes/footer.php'; ?>
