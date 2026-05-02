@@ -1,9 +1,7 @@
-
 <?php
 session_start();
 include 'connect.php';
 
-// NOW include the header after the redirect logic
 require_once 'includes/header.php'; 
 ?>
 
