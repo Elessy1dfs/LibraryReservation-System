@@ -39,7 +39,8 @@ if(mysqli_num_rows($res) > 0){
                 <td>{$row['reservation_date']}</td>
                 <td>{$row['time_slot']}</td>
                 <td>
-                    <!-- Action buttons to follow -->
+                   <a href='?action=approve&id={$row['res_id']}' class='btn btn-success btn-sm'>Accept</a>
+<a href='?action=reject&id={$row['res_id']}' class='btn btn-danger btn-sm'>Decline</a>
                 </td>
               </tr>";
     }
