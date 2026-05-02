@@ -77,3 +77,16 @@
         // 2. Insert into User Accounts Table (for Login)
         $sql2 = "INSERT INTO tbluseraccount(username, password, role) 
                  VALUES ('$sid', '$password', 'student')";
+
+        if(mysqli_query($conn, $sql1) && mysqli_query($conn, $sql2)){
+            echo "<script>
+                    alert('Registration Successful! You can now log in.');
+                    window.location.href='index.php';
+                  </script>";
+        } else {
+            echo "<script>alert('Database Error: " . mysqli_error($conn) . "');</script>";
+        }
+    }
+?>
+
+<?php require_once 'includes/footer.php'; ?> 
