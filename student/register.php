@@ -1,4 +1,3 @@
-
 <?php    
     include 'connect.php';    
     require_once 'includes/header.php'; 
@@ -59,3 +58,14 @@
         </form>
     </div>
 </div>
+
+<?php   
+    if(isset($_POST['btnRegister'])){       
+        $sid       = mysqli_real_escape_string($conn, $_POST['txtstudentid']);
+        $fname     = mysqli_real_escape_string($conn, $_POST['txtfirstname']);      
+        $lname     = mysqli_real_escape_string($conn, $_POST['txtlastname']);
+        $program   = mysqli_real_escape_string($conn, $_POST['txtprogram']);
+        $yearlevel = mysqli_real_escape_string($conn, $_POST['txtyearlevel']);
+        
+        // SECURE PASSWORD HASHING
+        $password  = password_hash($_POST['txtpassword'], PASSWORD_DEFAULT);
