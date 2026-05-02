@@ -27,7 +27,7 @@ See who last used a room (in case there are damages or issues)
 ## System Diagrams
 
 ### Use Case Diagram
-<img src="assets/images/usecase digram.png" width="200" alt="Use Case Diagram">
+<img src="assets/images/usecase digram.png" width="400" alt="Use Case Diagram">
 
 ### Class Diagram
 <img src="assets/images/Classdiagram.png" width="200" alt="System Class Diagram">
