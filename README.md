@@ -3,9 +3,9 @@
 We are expanding our previous project into a comprehensive system designed for both students and library staff to improve efficiency and resource management.
 
 Technology Stack<br>
-JavaScript: Manages client-side validation, handles AJAX requests for real-time room availability, and triggers interactive UI alerts.
-CSS: Custom styling used to create distinct, responsive layouts for both the Admin and Student dashboards.
-PHP: Handles server-side logic, processes form data, manages user sessions for authentication, and facilitates communication with the SQL database.
+JavaScript: Manages client-side validation, handles AJAX requests for real-time room availability, and triggers interactive UI alerts.<br>
+CSS: Custom styling used to create distinct, responsive layouts for both the Admin and Student dashboards.<br>
+PHP: Handles server-side logic, processes form data, manages user sessions for authentication, and facilitates communication with the SQL database.<br>
 MySQL (XAMPP): Used for database management, storing information for the library reservation system, including user credentials and facility booking records.
 
 
