@@ -35,6 +35,22 @@ $sql = "SELECT r.*, f.facility_name FROM tblreservations r
         ORDER BY r.res_id DESC";
 $res = mysqli_query($conn, $sql);
 ?>
+<?php
+if(mysqli_num_rows($res) > 0){
+    while($row = mysqli_fetch_array($res)){
+        $statusColor = ($row['status'] == 'Approved') ? 'text-success' : 'text-danger';
+        echo "<tr>
+                <td>{$row['student_id']}</td>
+                <td>{$row['facility_name']}</td>
+                <td>{$row['reservation_date']}</td>
+                <td>{$row['time_slot']}</td>
+                <td class='font-weight-bold $statusColor'>{$row['status']}</td>
+              </tr>";
+    }
+} else {
+    echo "<tr><td colspan='5' class='text-center'>No history found.</td></tr>";
+}
+?>
     
 
 
