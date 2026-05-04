@@ -51,6 +51,11 @@ if(mysqli_num_rows($res) > 0){
     echo "<tr><td colspan='5' class='text-center'>No history found.</td></tr>";
 }
 ?>
+</tbody>
+    </table>
+</div>
+
+<?php require_once 'includes/footer.php'; ?>
     
 
 
