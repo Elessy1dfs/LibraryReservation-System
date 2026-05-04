@@ -40,3 +40,24 @@ if(isset($_POST['btnReserve'])){
     }
     // ... insert logic follows
 }
+require_once 'includes/header.php'; 
+?>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow" style="border: 2px solid #800000;">
+                <div class="card-header text-center" style="background-color: #800000; color: #FFD700;">
+                    <h3>BOOK A FACILITY</h3>
+                </div>
+                <div class="card-body">
+                    <?php if($error_msg != ""): ?>
+                        <div class="alert alert-danger"><?php echo $error_msg; ?></div>
+                    <?php endif; ?>
+                    <form method="post">
+                        <!-- Form groups follow -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
