@@ -29,5 +29,14 @@ if(isset($_POST['btnReserve'])){
     if(mysqli_num_rows($conflict_result) > 0){
         $error_msg = "Sorry! Someone just took that spot. Please try a different room or time.";
     } 
+    else {
+        $sql = "INSERT INTO tblreservations (student_id, facility_id, reservation_date, time_slot, status) 
+                VALUES ('$student_id', '$facility_id', '$res_date', '$time_slot', 'Pending')";
+        
+        if(mysqli_query($conn, $sql)){
+            echo "<script>alert('Reservation Sent!'); window.location.href='my_reservations.php';</script>";
+            exit();
+        }
+    }
     // ... insert logic follows
 }
