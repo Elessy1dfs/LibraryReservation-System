@@ -61,3 +61,20 @@ require_once 'includes/header.php';
         </div>
     </div>
 </div>
+<div class="form-group">
+    <label>3. Available Facilities:</label>
+    <select name="facility_id" class="form-control" required>
+        <option value="">-- Select Space --</option>
+        <?php
+        // Only show facilities marked as 'Available' in the management system
+        $res = mysqli_query($conn, "SELECT * FROM tblfacilities WHERE status='Available'");
+        while($row = mysqli_fetch_array($res)){
+            echo "<option value='".$row['facility_id']."'>".$row['facility_name']."</option>";
+        }
+        ?>
+    </select>
+</div>
+
+<button type="submit" name="btnReserve" class="btn btn-maroon btn-block mt-3">
+    SUBMIT REQUEST
+</button>
