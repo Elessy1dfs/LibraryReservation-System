@@ -8,6 +8,7 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin'){
     header("Location: index.php");
     exit();
 }
+    ?>
 <div class="container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 style="color: #800000;">Reservation History Log</h2>
@@ -25,6 +26,14 @@ if(!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin'){
             </tr>
         </thead>
         <tbody class="bg-white">
+
+    <?php
+// Pull only Approved or Rejected records
+$sql = "SELECT r.*, f.facility_name FROM tblreservations r 
+        JOIN tblfacilities f ON r.facility_id = f.facility_id 
+        WHERE r.status != 'Pending' 
+        ORDER BY r.res_id DESC";
+$res = mysqli_query($conn, $sql);
 ?>
     
 
